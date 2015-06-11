@@ -1,0 +1,79 @@
+body {
+  font-family: $font;
+  line-height: 1.5;
+  background-image: url(../img/gplaypattern.png);
+}
+
+a {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul, ol {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.reverse-row {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+hr.thick {
+  border-bottom: 3px solid white;
+  width: 80%;
+  margin: auto;
+}
+
+hr.short {
+  border-bottom: 3px solid white;
+  width: 50%;
+  margin: auto;
+}
+
+select[name="archive-dropdown"] {
+  @extend .form-control;
+}
+
+.btn {
+  border-radius: 2px !important;
+}
+
+.card {
+  background: white;
+  padding: 2em;
+  margin-bottom: 2em;
+  box-shadow: $box-shadow;
+}
+
+.card-no-pad {
+  @extend .card;
+  padding: 0;
+}
+
+.overlay {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    @include gradient-directional(rgba(#333, .4 ), rgba($brand-primary, .7), 45deg);
+  }
+}
+
+.overlay-hover {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    @include gradient-directional(rgba(#333, .8 ), rgba($brand-primary, .9), 65deg);
+  }
+}

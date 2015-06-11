@@ -1,0 +1,54 @@
+div.tile {
+  margin-bottom: 2em;
+  position: relative;
+
+  & > a {
+    box-shadow: $box-shadow;
+
+    & > div {
+      @extend .overlay;
+      padding: 1em 1em 2em 2em;
+      height: 250px;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        @extend .overlay-hover;
+      }
+
+    }
+
+    div.tile-content {
+
+      h2 {
+        color: white;
+        position: relative;
+        z-index: 10;
+        font-size: 3em;
+
+        @media(min-width: $screen-sm-min) {
+          font-size: 2em;
+        }
+
+        @media(min-width: $screen-md-min) {
+          font-size: 3em;
+        }
+
+        &:hover {
+          color: darken(white, 5);
+        }
+      }
+    }
+  }
+}
+
+div.tile-col-6 {
+  @include make-sm-column(6);
+}
+div.tile-col-4 {
+  @include make-sm-column(4);
+}
+div.tile-col-12 {
+  @include make-sm-column(12);
+}

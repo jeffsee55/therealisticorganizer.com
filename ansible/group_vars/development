@@ -1,0 +1,44 @@
+mysql_root_password: devpw
+
+web_user: vagrant
+
+wordpress_sites:
+  therealisticorganizer.com:
+    site_hosts:
+      - therealisticorganizer.dev
+    local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:roots/bedrock.git
+    site_install: true
+    site_title: The Realistic Organizer
+    admin_user: jeffsee55
+    admin_password: js281883
+    admin_email: jeffsee.55@gmail.com
+    multisite:
+      enabled: false
+      subdomains: false
+    ssl:
+      enabled: false
+    system_cron: true
+    env:
+      wp_home: http://therealisticorganizer.dev
+      wp_siteurl: http://therealisticorganizer.dev/wp
+      wp_env: development
+      db_name: therealisticorganizer_dev
+      db_user: therealisticorganizer_dbuser
+      db_password: therealisticorganizer_dbpassword
+
+php_error_reporting: 'E_ALL'
+php_display_errors: 'On'
+php_display_startup_errors: 'On'
+php_track_errors: 'On'
+php_mysqlnd_collect_memory_statistics: 'On'
+php_opcache_enable: 0
+
+xdebug_install: false
+php_xdebug_remote_enable: true
+php_xdebug_remote_connect_back: true
+php_xdebug_remote_host: localhost
+php_xdebug_remote_port: 9000
+php_xdebug_remote_log: /tmp/xdebug.log
+php_xdebug_idekey: XDEBUG
+php_max_nesting_level: 200

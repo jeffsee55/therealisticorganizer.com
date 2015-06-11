@@ -1,0 +1,72 @@
+.sidebar-card {
+  @extend .card
+}
+
+.author-bio {
+  color: #1D1E1A;
+
+  &:hover {
+    color: lighten(#1D1E1A,10);
+  }
+}
+
+.author-image {
+  @include center-block;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media(min-width: $screen-sm-min) {
+    width: 150px;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+.author-header {
+  text-align: center;
+
+  span {
+    font-weight: 700;
+  }
+}
+.author-description {
+  text-align: justify;
+  padding-bottom: 1em;
+}
+
+.contact-button {
+
+  ul li {
+    a {
+      white-space: pre-wrap;
+      font-size: 1.4em;
+    }
+  }
+}
+
+ul.category-list {
+  @include make-row();
+  margin-top: 2em;
+
+  li {
+    @include make-md-column(6);
+    list-style-type: none;
+
+    a {
+      @include clearfix;
+      border-radius: 50%;
+      text-align: center;
+
+      img {
+        height: 100px;
+        width: 100px;
+      }
+
+      h3 {
+      }
+    }
+  }
+}

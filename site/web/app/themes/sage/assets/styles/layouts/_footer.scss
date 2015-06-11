@@ -1,0 +1,23 @@
+footer.content-info {
+  background: $brand-primary;
+  padding: 2em 0;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+    text-align: center;
+  }
+
+  a.brand {
+    @extend center-block;
+
+    img.footer-logo {
+      max-width: 250px;
+      display: block;
+      margin: 0 auto 2em;
+    }
+  }
+
+  a {
+    color: white;
+  }
+}

@@ -1,0 +1,57 @@
+.poster {
+  @extend .overlay;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+  padding: 3em 1em 5em 3em;
+  box-shadow: $box-shadow;
+
+  div.poster-content {
+    position: relative;
+    z-index: 10;
+
+    h1 {
+      color: white;
+      margin-bottom: 0.4em;
+      font-size: 3em;
+
+      @media(min-width: $screen-sm-min) {
+        font-size: 5em;
+      }
+
+      a {
+        color: white;
+
+        &:hover {
+          color: darken(white, 10);
+        }
+      }
+    }
+
+    .categories {
+
+      a {
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-primary;
+      }
+    }
+  }
+}
+
+.entry-summary, .content-body, .entry-content {
+  @extend .card;
+  @include clearfix;
+}
+
+.welcome-message {
+  @extend .card;
+  @include clearfix;
+}
+
+.entry-summary, .entry-content, .content-body {
+  margin-top: 2em;
+}

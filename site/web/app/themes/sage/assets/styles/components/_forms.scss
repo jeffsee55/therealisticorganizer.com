@@ -1,0 +1,16 @@
+.ninja-forms-all-fields-wrap {
+  input, textarea {
+    @extend .form-control;
+    margin-left: 0;
+  }
+
+  input[type="submit"] {
+    @extend .btn-lg;
+    @extend .btn-primary;
+  }
+}
+
+
+.list-checkbox-wrap {
+  @include make-sm-column(4);
+}
