@@ -1,4 +1,4 @@
-### HEAD
+# HEAD
 * SSL support
 * WP subdomain multisite support
 * Add xdebug role

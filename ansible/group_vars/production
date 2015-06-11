@@ -1,11 +1,36 @@
-mysql_root_password: productionpw
+mysql_root_password: 6L3SYz2gW5
+
+github_ssh_keys:
+  - username: jeffsee55 
+    authorized:
+      - "{{ web_user }}"
+
+project_pre_build_commands_local:
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: npm install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: bower install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: gulp --production
+
+project_local_files:
+  - name: load compressed assets
+    src: "{{ project.local_path }}/web/app/themes/sage/dist"
+    dest: web/app/themes/sage
+  - name: load plugins
+    src: "{{ project.local_path }}/web/app/plugins"
+    dest: web/app/
+  - name: sync local uploads
+    src: "{{ project.local_path }}/web/app/uploads"
+    dest: ../../shared
 
 wordpress_sites:
-  example.com:
+  45.55.182.118:
     site_hosts:
-      - example.com
+      - 45.55.182.118
+      - therealisticorganizer.com
     local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:roots/bedrock.git
+    repo: git@github.com:jeffsee55/therealisticorganizer.com.git
     branch: master
     multisite:
       enabled: false
@@ -14,18 +39,18 @@ wordpress_sites:
       enabled: false
     system_cron: true
     env:
-      wp_home: http://example.com
-      wp_siteurl: http://example.com/wp
+      wp_home: http://45.55.182.118
+      wp_siteurl: http://45.55.182.118
       wp_env: production
-      db_name: example_prod
-      db_user: example_dbuser
-      db_password: example_dbpassword
+      db_name: realorg_prod
+      db_user: realorg_dbuser
+      db_password: js281883
       # Generate your keys here: https://api.wordpress.org/secret-key/1.1/salt/
-      auth_key: "generateme"
-      auth_salt: "generateme"
-      logged_in_key: "generateme"
-      logged_in_salt: "generateme"
-      nonce_key: "generateme"
-      nonce_salt: "generateme"
-      secure_auth_key: "generateme"
-      secure_auth_salt: "generateme"
+      auth_key: "P>|Ht|%5-@4+nnr7vFrlQ857h<:!-Ygy*h0/,#qIkl{ =YJy!Gi-+6MxD-{0 %Qu"
+      auth_salt: "u|L6Yu+|_+w~StnmFGuvnOqr0.f,=eq$ {DCzVu(+|#Xy;WRL<:^*1G){kh8KKtt"
+      logged_in_key: "z{,UY~TI$V9Yn0.Oy/|811pZ[qde`qKgVoTnT$za-:r8YdSP<o{S#Ynjfb<4a8<v"
+      logged_in_salt: "J_r+rzz+]>vNuA3H4+G<c0Hhu~ #ul+e9.-VX+t9T^0(*z:U%{aAp>;0+X5d~$29"
+      nonce_key: "q2D*dlAidN8/@d]<|)P8ID,HKx|KTh:0|z/*k,9B,(gv;S::rmiMuFM6/MQJ1.CP"
+      nonce_salt: "o];WO9wwA|.u+hqt<V_:Z:>[cJPDsb?s`r72`t<zqowz/N)myufZSqy!}_)7|7t<"
+      secure_auth_key: "qY2EKFT&kW1p2PQt]8+/{6B8Bw-lu2c`UNrkJ);3At+hv+ouOh~{P|-DbTFne+EJ"
+      secure_auth_salt: "A,wk5~;+P-h?.p>+F|(sFsZff3!rR9y)}+dIR?`?9pC-(`EAF}):d>pycDfq+|Kb"
