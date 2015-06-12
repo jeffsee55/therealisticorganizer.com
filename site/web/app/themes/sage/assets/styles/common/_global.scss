@@ -2,6 +2,9 @@ body {
   font-family: $font;
   line-height: 1.5;
   background-image: url(../img/gplaypattern.png);
+
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 a {

@@ -20,9 +20,6 @@ project_local_files:
   - name: load plugins
     src: "{{ project.local_path }}/web/app/plugins"
     dest: web/app/
-  - name: sync local uploads
-    src: "{{ project.local_path }}/web/app/uploads"
-    dest: ../../shared
 
 wordpress_sites:
   45.55.182.118:
@@ -31,6 +28,7 @@ wordpress_sites:
       - therealisticorganizer.com
     local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:jeffsee55/therealisticorganizer.com.git
+    subtree: site
     branch: master
     multisite:
       enabled: false
@@ -54,3 +52,4 @@ wordpress_sites:
       nonce_salt: "o];WO9wwA|.u+hqt<V_:Z:>[cJPDsb?s`r72`t<zqowz/N)myufZSqy!}_)7|7t<"
       secure_auth_key: "qY2EKFT&kW1p2PQt]8+/{6B8Bw-lu2c`UNrkJ);3At+hv+ouOh~{P|-DbTFne+EJ"
       secure_auth_salt: "A,wk5~;+P-h?.p>+F|(sFsZff3!rR9y)}+dIR?`?9pC-(`EAF}):d>pycDfq+|Kb"
+
